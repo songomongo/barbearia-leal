@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ServicoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+route::post('servico',[ServicoController::class,'servicoCreate']);
+
+route::get('servico/{nome}',[ServicoController::class,'pesquisarPorNome']);
+
+route::get('all',[ServicoController::class,'ExibirTodosServico']);
+
+route::post('editar',[ServicoController::class,'editar']);
+
+Route::delete('excluir/{id}',[ServicoController::class, 'excluir']);
