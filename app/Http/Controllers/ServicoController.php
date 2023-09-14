@@ -88,14 +88,14 @@ class ServicoController extends Controller
         if (!isset($usuario)) {
             return response()->json([
                 'status' => false,
-                'massage' => "Usuario não encontrado"
+                'massage' => "serviço não encontrado"
             ]);
         }
         $usuario->delete();
 
         return response()->json([
             'status' => true,
-            'message' => "usuario excluido com sucesso"
+            'message' => "Serviço excluido com sucesso"
         ]);
     }
 }
