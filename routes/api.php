@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ServicoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,3 +25,5 @@ route::get('all',[ServicoController::class,'ExibirTodosServico']);
 route::post('editar',[ServicoController::class,'editar']);
 
 Route::delete('excluir/{id}',[ServicoController::class, 'excluir']);
+
+route::post('cliente/',[ClienteController::class, 'store']);
